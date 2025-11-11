@@ -1,12 +1,11 @@
 /*File: "DessertShop.java"
+ * Lab 5a: Dessert Shop, Part 5—Print Receipt
  * Author: Aldo Velasquez & Oliver Rivera
  * Course: CS-115-01
  * Instructor: Barbara Chamberlin
- * Date: Feb 3, 2024
+ * Date: Feb 9, 2024
  * Description:
- * 		* Add menu User Interface to add order items
- * 		* Create methods for input validation and user input to each type of subclass
- * 		* Print entire order list with user input and added items on file.
+ * 		* Commented out the previous print style and changed it to only one line of code calling the formated order class structure
  */
 
 package DessertShop;
@@ -83,35 +82,37 @@ public class DessertShop {
         order.addDessertItem(new Sundae("Vanilla", 3, 0.69, "Hot Fudge", 1.29));
         order.addDessertItem(new Cookie("Oatmeal Raisin", 2, 3.45));
 
-        // Print the name of each DessertItem in the order
-        System.out.println("Items in the order:\n");
+		/*
+		// Print the name of each DessertItem in the order
+		System.out.println("Items in the order:\n");
 
-        //This will print all the items in the order DessertItem Array list and stop when last item is added.
-        for (int i = 0; i < order.getOrderList().size(); i++) {
-            DessertItem item = order.getOrderList().get(i);
+		//This will print all the items in the order DessertItem Array list and stop when last item is added.
+		for (int i = 0; i < order.getOrderList().size(); i++) {
+		    DessertItem item = order.getOrderList().get(i);
+		    if (item instanceof Sundae) {
+		        System.out.printf("%s%n", ((Sundae) item).toString()); // Cast to Sundae and call toString()
+		    } else {
+		        System.out.printf("%-35s$%-9.2f[Tax: $%.2f]%n", item.getName(), item.calculateCost(), item.calculateTax());
+		    }
+		}//END of For Loop
 
-            //Added to correctly print sundae
-            if (item instanceof Sundae) {
-                Sundae sundae = (Sundae) item;
-                String sundaeName = sundae.getToppingName() + " " + sundae.getName() + " Sundae";
-                System.out.printf("%-35s$%-9.2f[Tax: $%.2f]%n", sundaeName + ":", item.calculateCost(), item.calculateTax());
-            } else {
-                System.out.printf("%-35s$%-9.2f[Tax: $%.2f]\n", item.getName() + ":", item.calculateCost(), item.calculateTax());
-            }
-        }//END of For Loop
+		//Print Order Subtotal, total, and Tax Total
+		double subtotal = order.orderCost();
+		double totalTax = order.orderTax();
+		double totalCost = subtotal + totalTax;
 
-        //Print Order Subtotal, total, and Tax Total
-        double subtotal = order.orderCost();
-        double totalTax = order.orderTax();
-        double totalCost = subtotal + totalTax;
-
-        System.out.println("------------------------------------------------------");
-        System.out.printf("Order Subtotals:                   $%-9.2f[Tax: $%.2f]\n", subtotal, totalTax);
-        System.out.printf("Order Total:                       $%.2f\n", totalCost);
+		System.out.println("------------------------------------------------------");
+		System.out.printf("Order Subtotals:                   $%-9.2f[Tax: $%.2f]\n", subtotal, totalTax);
+		System.out.printf("Order Total:                       $%.2f\n", totalCost);
 
 
-        // Print the total number of items in the order
-        System.out.println("\nTotal number of items in the order: " + order.getItemCount());
+		// Print the total number of items in the order
+		System.out.println("\nTotal number of items in the order: " + order.getItemCount());
+		 */
+
+        // Replace the code responsible for printing to the console with a single line to print out the receipt
+        System.out.println(order); // This will print the receipt
+
 
     }//END of main() Method
 
@@ -161,7 +162,7 @@ public class DessertShop {
     }
 
 
-    //userPromtpCookie
+    //userPromptCookie
     private static DessertItem userPromptCookie(Scanner sIn) {
 
         //Declare variables

@@ -1,58 +1,71 @@
- /*File: "DessertItem.java"
-  * Author: Aldo Velasquez & Oliver Rivera
-  * Course: CS-115-01
-  * Instructor: Barbara Chamberlin
-  * Date: Feb 2, 2024
-  * Description:
-  * 		* convert DessertItem Class in abstract class.
-  * 		* Add a getter and setter method for new variable taxPercent.
-  * 		* Declare abstract method calculateCost() which will be override on all subclasses.
-  * 		* Create a new Calculate Tax() Method.
-  */
+/*File: "DessertItem.java"
+ * Lab 5b: Dessert Shop, Part 6—Packaging
+ * Author: Aldo Velasquez & Oliver Rivera
+ * Course: CS-115-01
+ * Instructor: Barbara Chamberlin
+ * Date: Feb 10, 2024
+ * Description:
+ * 		* Implement Packaging Interface
+ * 		* Add an additional attribute packaging.
+ * 		* Add a getter and setter method for declared methods in Packaging getPackaging(), and setPackaging().
+ */
 
- package DessertShop;
+package DessertShop;
 
- public abstract class DessertItem {
+public abstract class DessertItem implements Packaging {
 
-     // Attributes
-     private String name;
-     private double taxPercent = 7.25;
+    // Attributes
+    private String name;
+    private double taxPercent = 7.25;
 
-     //Default Constructor
-     public DessertItem() {
-         name = "";
-     }
+    //Interface Attribute
+    private String packaging;
 
-     //Constructor with One Parameter
-     public DessertItem(String aName) {
-         name = aName;
-     }
+    //Default Constructor
+    public DessertItem() {
+        name = "";
+    }
 
-     //Getter Method for name
-     public String getName() {
-         return name;
-     }
+    //Constructor with One Parameter
+    public DessertItem(String aName) {
+        name = aName;
+    }
 
-     //Added
-     public double getTaxPercent() {
-         return taxPercent;
-     }
+    //Getter Method for name
+    public String getName() {
+        return name;
+    }
 
-     //Setter method for name
-     public void setName(String aName) {
-         name = aName;
-     }
+    //Added
+    public double getTaxPercent() {
+        return taxPercent;
+    }
 
-     //Added
-     public void setTaxPercent(double aTaxPercent) {
-         taxPercent = aTaxPercent;
-     }
+    //Added for Interface attribute
+    public String getPackaging() {
+        return packaging;
+    }
 
-     //Abstract method override in all the other classes it will be called.
-     public abstract double calculateCost();
+    //Setter method for name
+    public void setName(String aName) {
+        name = aName;
+    }
 
-     public double calculateTax() {
-         return calculateCost() * (taxPercent / 100);
-     }
+    //Added
+    public void setTaxPercent(double aTaxPercent) {
+        taxPercent = aTaxPercent;
+    }
 
- }//END of DessertItem Class
+    //Added for Interface attribute
+    public void setPackaging(String aPackaging) {
+        packaging = aPackaging;
+    }
+
+    //Abstract method override in all the other classes it will be called.
+    public abstract double calculateCost();
+
+    public double calculateTax() {
+        return calculateCost() * (taxPercent / 100);
+    }
+
+}//END of DessertItem Class
