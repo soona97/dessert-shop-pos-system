@@ -20,27 +20,27 @@
      @Test
      void testGetCandyWeight() {
          Candy c1 = new Candy("Push pop", 0.5, 0.99);
-         assertEquals(0.5, c1.getCandyWeight(), 0.001);
+         assertEquals(0.5, c1.getCandyWeight(),0.001);
      }
 
      @Test
      void testGetPricePerPound() {
          Candy c1 = new Candy("Push pop", 0.5, 0.99);
-         assertEquals(0.99, c1.getPricePerPound(), 0.01);
+         assertEquals(0.99, c1.getPricePerPound(),0.01);
      }
 
      @Test
      void testSetCandyWeight() {
          Candy c1 = new Candy("Push pop", 0.5, 0.99);
          c1.setCandyWeight(0.8);
-         assertEquals(0.8, c1.getCandyWeight(), 0.001);
+         assertEquals(0.8, c1.getCandyWeight(),0.001);
      }
 
      @Test
      void testSetPricePerPound() {
          Candy c1 = new Candy("Push pop", 0.5, 0.99);
          c1.setPricePerPound(0.79);
-         assertEquals(0.79, c1.getPricePerPound(), 0.01);
+         assertEquals(0.79, c1.getPricePerPound(),0.01);
      }
 
      //Added Methods

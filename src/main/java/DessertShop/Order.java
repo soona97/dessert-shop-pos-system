@@ -1,32 +1,46 @@
 /*File: "Order.java"
- * Lab 5a: Dessert Shop, Part 5—Print Receipt
+ * Lab 6a: Dessert Shop, Part 7—Payment Method
  * Author: Aldo Velasquez & Oliver Rivera
  * Course: CS-115-01
  * Instructor: Barbara Chamberlin
- * Date: Feb 2, 2024
+ * Date: Feb 15, 2024
  * Description:
- * 		* Created a print format for the order Receipt
- * 		* Added Receipt Headers, Dividers, and End
- * 		* Added each item on the list with its correct format to be printed on the Receipt
- * 		* Accurately place indentations, padding, and structure for the TOTALS Section of the receipt
+ * 		* Implement Payable Interface
+ * 		* Line 24: Added Attribute of type PayType
+ * 		* Line 29: Set payMethod to PayType.CASH in the default constructor.
+ * 		* Line 37 and 42: Include two simple methods for getPayType() and setPayType(PayType).
+ * 		* Line 121: Add a line to the bottom of the receipt via the toString() method that shows the payment type.
  */
 
 package DessertShop;
 
 import java.util.ArrayList;
 
-public class Order {
+public class Order implements Payable {
 
+
+    //Attributes
     private ArrayList<DessertItem> order;
+    private PayType payMethod;        //Added PayType attribute created on Payable interface.
 
     // Default constructor
     public Order() {
         order = new ArrayList<DessertItem>();
+        payMethod = PayType.CASH;
     }
 
-    // Getter method for order
+    // Getter methods
     public ArrayList<DessertItem> getOrderList() {
         return order;
+    }
+
+    public PayType getPayType() {
+        return payMethod;
+    }
+
+    //Setter Methods
+    public void setPayType(PayType aPayMethod) {
+        payMethod = aPayMethod;
     }
 
     // Method to add a DessertItem to the order
@@ -45,6 +59,7 @@ public class Order {
         for (DessertItem item : order) {
             totalCost += item.calculateCost();
         }
+
         return totalCost;
     }
 
@@ -54,6 +69,7 @@ public class Order {
         for (DessertItem item : order) {
             totalTax += item.calculateTax();
         }
+
         return totalTax;
     }
 
@@ -99,7 +115,10 @@ public class Order {
         finalOutput += line1 + "\n" + line2 + "\n\n" + line3 + "\n";
 
         // Add a receipt end
-        finalOutput += "\n------------------------------------------------------------------------------------\n";
+        finalOutput += "\n------------------------------------------------------------------------------------\n\n";
+
+        //ADD line to show the Payment type
+        finalOutput += "Paid for with " + payMethod.name();
 
         // Return the final receipt
         return finalOutput;

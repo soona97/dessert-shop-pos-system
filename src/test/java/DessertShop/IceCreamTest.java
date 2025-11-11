@@ -26,7 +26,7 @@
      @Test
      void testGetPricePerScoop() {
          IceCream i1 = new IceCream("Oreo Ice Cream", 2, 2.5);
-         assertEquals(2.5, i1.getPricePerScoop(),0.01);
+         assertEquals(2.5, i1.getPricePerScoop(), 0.01);
      }
 
      @Test
@@ -40,7 +40,7 @@
      void testSetPricePerScoop() {
          IceCream i1 = new IceCream("Oreo Ice Cream", 2, 2.5);
          i1.setPricePerScoop(3.5);
-         assertEquals(3.5, i1.getPricePerScoop(),0.01);
+         assertEquals(3.5, i1.getPricePerScoop(), 0.01);
      }
 
      //Added Methods

@@ -1,20 +1,24 @@
 /*File: "DessertShop.java"
- * Lab 5a: Dessert Shop, Part 5—Print Receipt
+ * Lab 6b: Dessert Shop Part 8: Sort Receipt
  * Author: Aldo Velasquez & Oliver Rivera
  * Course: CS-115-01
  * Instructor: Barbara Chamberlin
- * Date: Feb 9, 2024
+ * Date: Feb 17, 2024
  * Description:
- * 		* Commented out the previous print style and changed it to only one line of code calling the formated order class structure
+ * 		* Line 141: sort the items in the order.
  */
 
 package DessertShop;
 
+import java.util.Collections;
 import java.util.Scanner;
+
+import DessertShop.Payable.PayType;
 
 public class DessertShop {
 
     public static void main(String[] args) {
+        // TODO Auto-generated method stub
 
         // Create a new instance of the Order class
         Order order = new Order();
@@ -68,8 +72,6 @@ public class DessertShop {
 
         }//end of while (!done)
 
-        //Close the Scanner
-        sIn.close();
 
         System.out.println("\n");//END of Code Added Lab4B
 
@@ -82,9 +84,33 @@ public class DessertShop {
         order.addDessertItem(new Sundae("Vanilla", 3, 0.69, "Hot Fudge", 1.29));
         order.addDessertItem(new Cookie("Oatmeal Raisin", 2, 3.45));
 
+        //Ask user for payment method
+        String paymentMethod;
+        boolean valid = false;
+        while (!valid) {
+            System.out.println("What form of payment will be used? (CASH, CARD, PHONE):");
+            paymentMethod = sIn.nextLine();
+
+            for (PayType p : PayType.values()) {
+                if (paymentMethod.equalsIgnoreCase(p.name())) {
+                    valid = true;
+                    order.setPayType(p);
+                    break;
+                }//END of if Statement
+            }//END of For Loop
+            if (!valid) {
+                System.out.println("That's not a valid form of payment.");
+            }
+        }//END of While Loop
+
+        //Close the Scanner
+        sIn.close();
+
+
 		/*
 		// Print the name of each DessertItem in the order
 		System.out.println("Items in the order:\n");
+
 
 		//This will print all the items in the order DessertItem Array list and stop when last item is added.
 		for (int i = 0; i < order.getOrderList().size(); i++) {
@@ -109,6 +135,9 @@ public class DessertShop {
 		// Print the total number of items in the order
 		System.out.println("\nTotal number of items in the order: " + order.getItemCount());
 		 */
+
+        //Sort the items in the order
+        Collections.sort(order.getOrderList());
 
         // Replace the code responsible for printing to the console with a single line to print out the receipt
         System.out.println(order); // This will print the receipt
@@ -162,7 +191,7 @@ public class DessertShop {
     }
 
 
-    //userPromptCookie
+    //userPromtpCookie
     private static DessertItem userPromptCookie(Scanner sIn) {
 
         //Declare variables
