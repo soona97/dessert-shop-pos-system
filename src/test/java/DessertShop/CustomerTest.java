@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 class CustomerTest {
 
-	@Test
+    @Test
     void testGetName() {
         Customer customer = new Customer("John Doe");
         assertEquals("John Doe", customer.getName());

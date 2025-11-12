@@ -2,7 +2,7 @@
  * Lab 7b: Dessert Shop, Part 10—Customer Class
  * Author: Aldo Velasquez & Oliver Rivera
  * Course: CS-115-01
- * Instructor: Barbara Chamberlin 
+ * Instructor: Barbara Chamberlin
  * Date: Feb 24, 2024
  * Description:
  * 		* Create the customer class with the following instructions:
@@ -28,29 +28,29 @@ package DessertShop;
 import java.util.ArrayList;
 
 public class Customer {
-	
-	//Static field to keep track of the next customer ID
-	private static int nextCustID = 1000;
-	
-	//Attributes
-	private String custName;
-	private ArrayList<Order> orderHistory;
-	private int custID;
-	
-	//Default Constructor
-	public Customer() {
-		custName = "";
-		custID = 0;
-	}
-	
-	//Constructor with One Argument
-	public Customer(String aCustName) {
-		custName = aCustName;
-		orderHistory = new ArrayList<Order>();
-		custID = nextCustID++;
-	}
-	
-	// Getter methods
+
+    //Static field to keep track of the next customer ID
+    private static int nextCustID = 1000;
+
+    //Attributes
+    private String custName;
+    private ArrayList<Order> orderHistory;
+    private int custID;
+
+    //Default Constructor
+    public Customer() {
+        custName = "";
+        custID = 0;
+    }
+
+    //Constructor with One Argument
+    public Customer(String aCustName) {
+        custName = aCustName;
+        orderHistory = new ArrayList<Order>();
+        custID = nextCustID++;
+    }
+
+    // Getter methods
     public String getName() {
         return custName;
     }

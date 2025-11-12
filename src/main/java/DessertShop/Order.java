@@ -137,7 +137,7 @@ public class Order implements Payable {
         String finalOutput = "";
 
         // Add the receipt header
-        finalOutput += "--------------------------------------Receipt---------------------------------------\n\n";
+        finalOutput += "\n--------------------------------------Receipt---------------------------------------\n\n";
 
         // Add each item's toString() output to the receipt
         for (int i = 0; i < order.size(); i++) {
