@@ -1,18 +1,18 @@
 /*File: "Candy.java"
- * Lab 5b: Dessert Shop, Part 6—Packaging
+ * Lab 7a: Dessert Shop, Part 9—Combine Like Items
  * Author: Aldo Velasquez & Oliver Rivera
  * Course: CS-115-01
  * Instructor: Barbara Chamberlin
- * Date: Feb 10, 2024
+ * Date: Feb 24, 2024
  * Description:
- * 		* Call the setPackaging(String) defined in the superclass from within the subclass constructors.
- * 		* Pass String argument to set packaging = "Bag"
- * 		* Update toString() method to include the packaging type in "()" on the receipt
+ * 		* Line 15: Implement the generic SameItem<> interface.
+ * 		* Line 61 -70: Include the isSameAs(T) method:
+ * 				return true if the calling item and the item passed in as an argument (other) have the same: name & PricePerPound
  */
 
 package DessertShop;
 
-public class Candy extends DessertItem {
+public class Candy extends DessertItem implements SameItem<Candy> {
 
     //Attributes
     private double candyWeight;
@@ -55,6 +55,18 @@ public class Candy extends DessertItem {
     //calculateCost() Override
     public double calculateCost() {
         return candyWeight * pricePerPound;
+    }
+
+    //isSameAs()
+    public boolean isSameAs(Candy other) {
+        // Check if the names are the same
+        boolean namesMatch = getName().equals(other.getName());
+
+        // Check if the price per pound is the same
+        boolean pricesMatch = pricePerPound == other.pricePerPound;
+
+        // Return true if both the name and price per pound match, otherwise return false
+        return namesMatch && pricesMatch;
     }
 
     //Format the Candy item toString Method to accurately place indentations, padding, and structure

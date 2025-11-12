@@ -26,7 +26,7 @@
      @Test
      void testGetToppingPrice() {
          Sundae s1 = new Sundae("McSundae", 2, 2.5, "Dulce de Leche", 0.99);
-         assertEquals(0.99, s1.getToppingPrice(),0.01);
+         assertEquals(0.99, s1.getToppingPrice(), 0.01);
      }
 
      @Test
@@ -40,7 +40,7 @@
      void testSetToppingPrice() {
          Sundae s1 = new Sundae("McSundae", 2, 2.5, "Dulce de Leche", 0.99);
          s1.setToppingPrice(0.5);
-         assertEquals(0.5, s1.getToppingPrice(),0.01);
+         assertEquals(0.5, s1.getToppingPrice(), 0.01);
      }
 
      //Added methods

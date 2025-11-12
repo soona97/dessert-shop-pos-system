@@ -1,15 +1,20 @@
 /*File: "Order.java"
- * Lab 6a: Dessert Shop, Part 7—Payment Method
+ * Lab 7a: Dessert Shop, Part 9—Combine Like Items
  * Author: Aldo Velasquez & Oliver Rivera
  * Course: CS-115-01
  * Instructor: Barbara Chamberlin
- * Date: Feb 15, 2024
+ * Date: Feb 24, 2024
  * Description:
- * 		* Implement Payable Interface
- * 		* Line 24: Added Attribute of type PayType
- * 		* Line 29: Set payMethod to PayType.CASH in the default constructor.
- * 		* Line 37 and 42: Include two simple methods for getPayType() and setPayType(PayType).
- * 		* Line 121: Add a line to the bottom of the receipt via the toString() method that shows the payment type.
+ * 		* Line 55-77: If item to be added is of type Candy:
+ *				Loop through all other items in the order ArrayList.
+ *						If the current other item in the ArrayList being evaluated is also of type Candy and a call to Candy's isSameAs(Candy) method returns true,
+ *								add the candyWeight of the item to be added to the already existing item in the order, and
+ *								DO NOT add the new item.
+ *		* Lines 81-103: If item to be added is of type Cookie:
+ * 				Loop through all other items in the order ArrayList.
+ *						If the current other item in the ArrayList being evaluated is also of type Cookie and a call to Cookie's isSameAs(Cookie) method returns true,
+ *								add the cookieQty of the item to be added to the already existing item in the order, and
+ *								DO NOT add the new item. *
  */
 
 package DessertShop;
@@ -45,6 +50,59 @@ public class Order implements Payable {
 
     // Method to add a DessertItem to the order
     public void addDessertItem(DessertItem item) {
+
+        //Check if the item is an instance of Candy
+        if (item instanceof Candy) {
+
+            // Iterate through the existing items in the order
+            for (int i = 0; i < order.size(); i++) {
+
+                // Get the current item in the order
+                DessertItem otherItem = order.get(i);
+
+                // Check if the current item is also a Candy
+                if (otherItem instanceof Candy) {
+
+                    // Check if the candies are the same using the isSameAs method
+                    if (((Candy) otherItem).isSameAs(((Candy) item))) {
+
+                        // If the candies are the same, combine their weights
+                        ((Candy) otherItem).setCandyWeight(((Candy) item).getCandyWeight() + ((Candy) otherItem).getCandyWeight());
+
+                        // Return from the method as the candies have been combined
+                        return;
+                    }//END of If statement that started on Line 62
+                }//END of If Statement otherItem instance of Candy
+            }//END of For Loop to iterate thru Existing items in the order
+        }//END of If Statement item instance of Candy
+
+
+        //Check if the item is an instance of Cookie
+        if (item instanceof Cookie) {
+
+            // Iterate through the existing items in the order
+            for (int i = 0; i < order.size(); i++) {
+
+                // Get the current item in the order
+                DessertItem otherItem = order.get(i);
+
+                // Check if the current item is also a Candy
+                if (otherItem instanceof Cookie) {
+
+                    // Check if the candies are the same using the isSameAs method
+                    if (((Cookie) otherItem).isSameAs(((Cookie) item))) {
+
+                        // If the candies are the same, combine their weights
+                        ((Cookie) otherItem).setCookieQty(((Cookie) item).getCookieQty() + ((Cookie) otherItem).getCookieQty());
+
+                        // Return from the method as the candies have been combined
+                        return;
+                    }//END of If statement that started on Line 62
+                }//END of If Statement otherItem instance of Candy
+            }//END of For Loop to iterate thru Existing items in the order
+        }//END of If Statement item instance of Candy
+
+        // If the item is not a Candy or doesn't match existing items, add it to the order
         order.add(item);
     }
 

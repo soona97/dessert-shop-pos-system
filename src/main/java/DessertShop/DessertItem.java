@@ -34,17 +34,17 @@ public abstract class DessertItem implements Packaging, Comparable<DessertItem> 
     }
 
     //Getter Method for name
-    public String getName(){
+    public String getName() {
         return name;
     }
 
     //Added
-    public double getTaxPercent(){
+    public double getTaxPercent() {
         return taxPercent;
     }
 
     //Added for Interface attribute
-    public String getPackaging(){
+    public String getPackaging() {
         return packaging;
     }
 
@@ -59,7 +59,7 @@ public abstract class DessertItem implements Packaging, Comparable<DessertItem> 
     }
 
     //Added for Interface attribute
-    public void setPackaging(String aPackaging){
+    public void setPackaging(String aPackaging) {
         packaging = aPackaging;
     }
 
@@ -68,15 +68,14 @@ public abstract class DessertItem implements Packaging, Comparable<DessertItem> 
 
     //Calculate taxes for each Dessert Item
     public double calculateTax() {
-        return calculateCost() * (taxPercent/100);
+        return calculateCost() * (taxPercent / 100);
     }
 
     //Override the compareTo() method to compare dessert items based on cost
     public int compareTo(DessertItem other) {
-        if(this.calculateCost() > other.calculateCost()) {
+        if (this.calculateCost() > other.calculateCost()) {
             return 1;
-        }
-        else if (this.calculateCost() < other.calculateCost()) {
+        } else if (this.calculateCost() < other.calculateCost()) {
             return -1;
         }
         return 0;
